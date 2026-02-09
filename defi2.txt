@@ -1,3 +1,18 @@
 interface AppareilConnecte {
     public void allumer();
 }
+
+class Lampe implements AppareilConnecte {
+    @Override
+    public void allumer(){
+        System.out.println("La Lampe brille !" );
+    }
+}
+
+
+class Lampe implements AppareilConnecte {
+    @Override
+    public void allumer(){
+        System.out.println("La Lampe brille !" );
+    }
+}
