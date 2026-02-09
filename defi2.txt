@@ -16,3 +16,23 @@ class Radiateur implements AppareilConnecte {
         System.out.println(" Le Radiateur chauffe!" );
     }
 }
+
+class Telecommande {
+    private AppareilConnecte dispositif;
+
+    public void setDispositif(AppareilConnecte nouvelAppareil) {
+        this.dispositif = nouvelAppareil;
+    }
+   public void presserButton() {
+    // 1. On vérifie si on a bien "branché" quelque chose dans dispositif
+    if (dispositif != null) {
+        // 2. On donne l'ordre ! 
+        // Peu importe si c'est une Lampe ou un Radiateur, 
+        // on sait qu'ils ont tous les deux la méthode allumer().
+        dispositif.allumer();
+    } else {
+        // 3. Si c'est vide (null), on prévient l'utilisateur
+        System.out.println("Oups ! Aucun appareil n'est relié à cette télécommande.");
+    }
+}
+}
