@@ -1,0 +1,21 @@
+# 📑 RÉSUMÉ POO - RÈGLES D'OR
+
+1. RELATION "EST UN" (Héritage)
+   -> mot-clé : extends
+   -> Test : Un Lion EST UN Animal ? OUI -> Heritage.
+
+2. RELATION "A UN" (Composition)
+   -> mot-clé : variable interne (ex: Arme monArme)
+   -> Test : Une Voiture EST UN Moteur ? NON. Elle A UN Moteur. -> Composition.
+   -> Avantage : Plus flexible (Lego).
+
+3. LE CONTRAT (Interface)
+   -> mot-clé : implements
+   -> Utilité : Obliger une classe à posséder une méthode (ex: attaquer()).
+   -> Important : Toujours mettre "public" dans la classe qui implémente.
+
+4. PILIERS TECHNIQUES
+   - Encapsulation : Variables en 'private' pour protéger les données.
+   - Polymorphisme : Une même méthode (crier()) fait des choses différentes (Miaou/Roar).
+   - super() : Appelle le papa.
+   - this : C'est moi.
