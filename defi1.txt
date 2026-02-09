@@ -16,3 +16,9 @@ class Mage  extends Personnage{
         System.out.println("attack  de lancement de sort");
     }
 }
+
+public class Main {
+    public static void Main (String[] args) {
+        ArrayList<Personnage> listPersonnage = new ArrayList<>();
+    }
+}
