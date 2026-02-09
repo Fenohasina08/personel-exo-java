@@ -5,6 +5,10 @@ class Personnage {
     void attaquer();
 }
 
-class Guerrier {
-    
+class Guerrier extens Personnage{
+
+}
+
+class Mage  extends Personnage{
+
 }
