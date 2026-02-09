@@ -1,0 +1,35 @@
+interface Combattant {
+    void attaquer();
+}
+
+class Arme {
+    String nomArme;
+    Arme(String n) { this.nomArme = n; }
+}
+
+class Monstre {
+    String nom;
+    Monstre(String n) { this.nom = n; }
+}
+
+// C'est ici que tout se joue !
+class Dragon extends Monstre implements Combattant {
+    Arme sonArme; // Composition
+
+    Dragon(String nomMonstre, String nomArme) {
+        super(nomMonstre); // On donne le nom au parent Monstre
+        this.sonArme = new Arme(nomArme); // On crée l'arme du dragon
+    }
+
+    @Override
+    public void attaquer() {
+        System.out.println(nom + " attaque avec " + sonArme.nomArme);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dragon d = new Dragon("Spyro", "Flamme Bleue");
+        d.attaquer();
+    }
+}
