@@ -20,5 +20,9 @@ class Mage  extends Personnage{
 public class Main {
     public static void Main (String[] args) {
         ArrayList<Personnage> listPersonnage = new ArrayList<>();
+         listPersonnage personnage = new ListPersonnage();
+        listpersonnage.nom("guerier1");
+        listpersonnage.nom("mage1");
+
     }
 }
