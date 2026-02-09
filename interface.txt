@@ -1,0 +1,14 @@
+ interface Imprimable {
+    void imprimer() ;
+ }
+ class Contrat implements Imprimable {
+    @Override
+    public void imprimer(){
+        System.out.println("Imprimer le contrat en 3 exemplaires");
+    }
+ }
+  class Photo implements Imprimable {
+    public void imprimer(){
+        System.out.println("Imprimer la photo en couleur");
+    }
+ }
