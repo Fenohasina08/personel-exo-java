@@ -1,4 +1,6 @@
 class Personnage {
     String nom;
     int pointdevie;
+
+    void attaquer();
 }
