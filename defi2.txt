@@ -10,9 +10,9 @@ class Lampe implements AppareilConnecte {
 }
 
 
-class Lampe implements AppareilConnecte {
+class Radiateur implements AppareilConnecte {
     @Override
     public void allumer(){
-        System.out.println("La Lampe brille !" );
+        System.out.println(" Le Radiateur chauffe!" );
     }
 }
