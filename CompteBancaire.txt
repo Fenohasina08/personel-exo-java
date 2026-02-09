@@ -1,0 +1,29 @@
+class CompteBancaire {
+    int solde
+    void retirer(int montant) {
+        if(montant > solde) {
+            throw new ArithmeticException("Solde insuffisant");
+        }
+        solde -= montant;
+    }
+}
+
+ public class Main {
+    public static void main(String[] args) {
+        CompteBancaire monCompte = new CompteBancaire();
+        monCompte.solde = 200; // On lui donne un petit budget
+
+        try {
+            System.out.println("Tentative de retrait de 500€...");
+            monCompte.retirer(500); // C'est ici que l'alerte va être "lancée"
+            System.out.println("Retrait réussi !"); // Cette ligne sera sautée si ça plante
+        } 
+        catch (ArithmeticException e) {
+            // Ici, 'e' contient l'objet de l'erreur
+            // e.getMessage() permet de récupérer ton texte "Solde insuffisant"
+            System.out.println("ALERTE : " + e.getMessage());
+        }
+
+        System.out.println("Le distributeur est prêt pour une autre opération.");
+    }
+}
