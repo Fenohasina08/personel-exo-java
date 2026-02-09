@@ -24,5 +24,8 @@ public class Main {
         listpersonnage.nom("guerier1");
         listpersonnage.nom("mage1");
 
+        for(listPersonnage p: personnage) {
+            p.attaquer();
+        }
     }
 }
