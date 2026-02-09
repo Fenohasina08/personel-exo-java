@@ -1,31 +1,47 @@
-class Personnage {
-    String nom;
-    int pointdevie;
+ import java.util.ArrayList;
 
-    void attaquer();
+// J'ai ajouté "abstract" car un personnage "générique" n'existe pas, 
+// on est soit Guerrier soit Mage.
+abstract class Personnage {
+    String nom;
+    int pointDeVie = 100;
+
+    // Constructeur pour donner un nom facilement
+    Personnage(String nom) { this.nom = nom; }
+
+    abstract void attaquer(); // Chaque enfant DOIT dire comment il attaque
 }
 
-class Guerrier extens Personnage{
-    public void attaquer (){
-        System.out.println("attack avec épée");
+class Guerrier extends Personnage {
+    Guerrier(String nom) { super(nom); }
+
+    @Override
+    public void attaquer() {
+        System.out.println(nom + " attaque avec son épée !");
     }
 }
 
-class Mage  extends Personnage{
-  public void attaquer (){
-        System.out.println("attack  de lancement de sort");
+class Mage extends Personnage {
+    Mage(String nom) { super(nom); }
+
+    @Override
+    public void attaquer() {
+        System.out.println(nom + " lance un sort de feu !");
     }
 }
 
 public class Main {
-    public static void Main (String[] args) {
-        ArrayList<Personnage> listPersonnage = new ArrayList<>();
-         listPersonnage personnage = new ListPersonnage();
-        listpersonnage.nom("guerier1");
-        listpersonnage.nom("mage1");
+    public static void main(String[] args) {
+        // 1. On crée la liste
+        ArrayList<Personnage> armee = new ArrayList<>();
 
-        for(listPersonnage p: personnage) {
-            p.attaquer();
+        // 2. On crée les objets ET on les ajoute (le "new" est vital)
+        armee.add(new Guerrier("Aragorn"));
+        armee.add(new Mage("Gandalf"));
+
+        // 3. La boucle magique (Polymorphisme)
+        for (Personnage p : armee) {
+            p.attaquer(); // Java sait tout seul qui est Guerrier ou Mage !
         }
     }
 }
