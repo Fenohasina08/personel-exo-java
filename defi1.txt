@@ -6,9 +6,13 @@ class Personnage {
 }
 
 class Guerrier extens Personnage{
-
+    public void attaquer (){
+        System.out.println("attack avec épée");
+    }
 }
 
 class Mage  extends Personnage{
-
+  public void attaquer (){
+        System.out.println("attack  de lancement de sort");
+    }
 }
