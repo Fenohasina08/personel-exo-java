@@ -1,0 +1,56 @@
+ import java.util.ArrayList;
+
+// 1. L'interface (Rien à changer, c'était parfait)
+interface Animal {
+    void emettreSon();
+}
+
+// 2. La classe Lion (Tu as bien implémenté la méthode)
+class Lion implements Animal {
+    @Override
+    public void emettreSon() {
+        System.out.println("Le lion rugit : ROAR !");
+    }
+}
+
+// 3. La classe Zoo (C'est ici qu'on a fait les ajustements)
+class Zoo {
+    // Utilisation d'une liste générique
+    private ArrayList<Animal> listAnimal = new ArrayList<>();
+
+    void ajouter(Animal a) {
+        try {
+            // .size() pour obtenir le nombre d'éléments
+            if (listAnimal.size() >= 3) {
+                // On crée le message de l'exception ici
+                throw new Exception("Le zoo est plein ! Impossible d'ajouter " + a.getClass().getSimpleName());
+            }
+            listAnimal.add(a);
+            System.out.println("Animal ajouté avec succès.");
+        } catch (Exception e) {
+            // On attrape l'erreur et on affiche son message
+            System.out.println("Erreur : " + e.getMessage());
+        }
+    }
+
+    void faireCrierToutLe Monde() {
+        for (Animal a : listAnimal) {
+            a.emettreSon();
+        }
+    }
+}
+
+// 4. Le test (Le Main)
+public class Main {
+    public static void main(String[] args) {
+        Zoo monZoo = new Zoo();
+
+        // On essaie d'ajouter 4 lions pour tester la limite
+        monZoo.ajouter(new Lion());
+        monZoo.ajouter(new Lion());
+        monZoo.ajouter(new Lion());
+        monZoo.ajouter(new Lion()); // Celui-ci devrait déclencher l'Exception !
+
+        monZoo.faireCrierToutLe Monde();
+    }
+}

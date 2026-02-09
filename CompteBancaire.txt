@@ -27,3 +27,15 @@ class CompteBancaire {
         System.out.println("Le distributeur est prêt pour une autre opération.");
     }
 }
+
+//liste compte CompteBancaire
+ArrayList<CompteBancaire> listcomptebancaire = new ArrayList<>();
+for (CompteBancaire c : maBanque) {
+    try {
+        c.retirer(100); 
+        System.out.println("Retrait effectué sur un compte.");
+    } catch (ArithmeticException e) {
+        // Que fais-tu ici pour ne pas que le programme crash ?
+        System.out.println("Problème : " + getMessage() );
+    }
+}
