@@ -36,3 +36,24 @@ class Telecommande {
     }
 }
 }
+
+public class Main {
+    public static void main(String[] args) {
+        // 1. Création de la télécommande (le cerveau)
+        Telecommande maTelecommande = new Telecommande();
+
+        // 2. Création de nos objets connectés
+        Lampe salonLampe = new Lampe();
+        Radiateur chambreRadiateur = new Radiateur();
+
+        // --- TEST 1 : On branche la lampe ---
+        System.out.println("--- Test avec la Lampe ---");
+        maTelecommande.setDispositif(salonLampe); 
+        maTelecommande.presserButton(); // Affiche : La Lampe brille !
+
+        // --- TEST 2 : On change pour le radiateur ---
+        System.out.println("\n--- Test avec le Radiateur ---");
+        maTelecommande.setDispositif(chambreRadiateur); 
+        maTelecommande.presserButton(); // Affiche : Le Radiateur chauffe !
+    }
+}
