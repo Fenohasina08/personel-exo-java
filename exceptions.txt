@@ -1,0 +1,8 @@
+try {
+    maMachine.servir(); // Café 1 : OK
+    maMachine.servir(); // Café 2 : OK
+    maMachine.servir(); // Café 3 : ?
+} catch (Exception e) {
+    System.out.println("ERREUR : " + e.getMessage());
+}
+System.out.println("Fin du programme.");
